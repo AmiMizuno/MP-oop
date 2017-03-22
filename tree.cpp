@@ -14,9 +14,14 @@ void tree::outData(std::ofstream &ofst)
 	ofst << "This is a tree: age = " << age << " years. ";
 	plant::outData(ofst);
 
+
+}
+
+
+
+
 }
 
 
 
 
-}

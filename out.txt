@@ -1,0 +1,9 @@
+Filled container. 
+Container contains 4 elements.
+This is a tree: age = 25 years. Name = Bereza, habitat = Steppe
+This is a bush: flowering month = March. Name = Kust, habitat = Forest
+This is a tree: age = 90 years. Name = Dub, habitat = Forest
+This is a bush: flowering month = August. Name = Ryabina, habitat = Tundra
+
+Empty container. 
+Container contains 0 elements.

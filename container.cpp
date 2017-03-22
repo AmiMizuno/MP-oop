@@ -19,7 +19,6 @@ void container::clear()
 	len = 0;
 }
 
-
 void container::sort()
 {
 	container::element* a = head;
@@ -57,7 +56,6 @@ void container::sort()
 }
 
 
-
 void container::in(std::ifstream &ifst)
 {
 	while (!ifst.eof())
@@ -89,8 +87,6 @@ void container::out(std::ofstream &ofst)
 		current = current->next;
 	}
 }
-
-
 
 container::container() : head(NULL), tail(NULL), len(0)
 {

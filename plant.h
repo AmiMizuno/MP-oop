@@ -10,15 +10,15 @@ namespace flora
 class plant
 {
 protected:
+	enum zone { TUNDRA, DESERT, STEPPE, FOREST };
 	plant() {}
 private:
 	std::string name;
+	zone habitat;
 public:
 	static plant *in(std::ifstream &ifst);
-
 	bool compare(plant &b);
 	int consonant_count();
-
 	virtual void inData(std::ifstream &ifst);
 	virtual void outData(std::ofstream &ofst);
 	virtual ~plant() {}
