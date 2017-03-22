@@ -12,8 +12,8 @@ struct bush : public plant
 	enum month { JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER };
 	month flowering;
 public:
-	virtual void inData(std::ifstream &ifst);
-	virtual void outData(std::ofstream &ofst);
+	void inData(std::ifstream &ifst);
+	void outData(std::ofstream &ofst);
 };
 
 

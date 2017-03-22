@@ -13,6 +13,7 @@ class tree : public plant
 public:
 	virtual void inData(std::ifstream &ifst);
 	virtual void outData(std::ofstream &ofst);
+
 };
 
 }
