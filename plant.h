@@ -15,8 +15,10 @@ private:
 	std::string name;
 public:
 	static plant *in(std::ifstream &ifst);
+
 	bool compare(plant &b);
 	int consonant_count();
+
 	virtual void inData(std::ifstream &ifst);
 	virtual void outData(std::ofstream &ofst);
 	virtual ~plant() {}

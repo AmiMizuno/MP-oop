@@ -3,6 +3,9 @@
 #include "bush.h"
 #include <iostream>
 #include <cctype>
+#include "flower.h"
+#include <iostream>
+
 
 namespace flora
 {
@@ -19,6 +22,9 @@ plant* plant::in(std::ifstream &ifst)
 			break;
 		case 2:
 			p = new bush;
+			break;
+		case 3:
+			p = new flower;
 			break;
 		default:
 			return 0;
@@ -57,5 +63,16 @@ void plant::outData(std::ofstream &ofst)
 {
 	ofst << "Name = " << plant::name << ", consonant count = " << consonant_count() << std::endl;
 }
+
+void plant::inData(std::ifstream &ifst)
+{
+	ifst >> name;
+}
+
+void plant::outData(std::ofstream &ofst)
+{
+	ofst << "Name = " << plant::name << std::endl;
+}
+
 
 }
