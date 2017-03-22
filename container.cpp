@@ -4,8 +4,7 @@
 
 namespace flora
 {
-//----------------------------------------------------
-// Очистка контейнера от элементов 
+
 void container::clear()
 {
 	while (head != NULL)
@@ -15,11 +14,11 @@ void container::clear()
 		delete head;
 		head = tmp;
 	}
+	head = NULL;
 	tail = NULL;
 	len = 0;
 }
-//----------------------------------------------------
-// Ввод содержимого контейнера
+
 void container::in(std::ifstream &ifst)
 {
 	while (!ifst.eof())
@@ -29,6 +28,7 @@ void container::in(std::ifstream &ifst)
 			break;
 		container::element* elem = new container::element;
 		elem->p = p;
+		elem->next = NULL;
 		if (head == NULL)
 			head = tail = elem;
 		else
@@ -39,24 +39,19 @@ void container::in(std::ifstream &ifst)
 		len++;
 	}
 }
-//----------------------------------------------------
-// Вывод содержимого контейнера
 
 void container::out(std::ofstream &ofst)
 {
 	ofst << "Container contains " << len << " elements." << std::endl;
 	container::element* current = head;
-	int i = 0;
 	while (current != NULL)
 	{
-		i++;
-		ofst << i << ": ";
 		(current->p)->outData(ofst);
 		current = current->next;
 	}
 }
-//Инициализация контейнера
-//создания конструктором класса
+
+
 container::container() : head(NULL), tail(NULL), len(0)
 {
 }

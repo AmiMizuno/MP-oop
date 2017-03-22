@@ -1,11 +1,12 @@
 #include "plant.h"
 #include "tree.h"
 #include "bush.h"
+#include "flower.h"
+#include <iostream>
 
 namespace flora
 {
-// ¬вод параметров обобщенной фигуры 
-// из стандартного потока ввода
+
 plant* plant::in(std::ifstream &ifst)
 {
 	plant *p;
@@ -19,14 +20,25 @@ plant* plant::in(std::ifstream &ifst)
 		case 2:
 			p = new bush;
 			break;
+		case 3:
+			p = new flower;
+			break;
 		default:
 			return 0;
 	}
-	std::string name;
-	ifst >> name;
-	p->name = name;
 	p->inData(ifst);
 	return p;
+}
+
+
+void plant::inData(std::ifstream &ifst)
+{
+	ifst >> name;
+}
+
+void plant::outData(std::ofstream &ofst)
+{
+	ofst << "Name = " << plant::name << std::endl;
 }
 
 

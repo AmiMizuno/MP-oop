@@ -6,15 +6,18 @@
 
 namespace flora
 {
-// иденитфикация, порождение и ввод фигуры из потока
+
 class plant
 {
 protected:
+	plant() {}
+private:
 	std::string name;
 public:
 	static plant *in(std::ifstream &ifst);
-	virtual void inData(std::ifstream &ifst) = 0;// ввод
-	virtual void outData(std::ofstream &ofst) = 0;// вывод
+	virtual void inData(std::ifstream &ifst);
+	virtual void outData(std::ofstream &ofst);
+	virtual ~plant() {}
 
 };
 
