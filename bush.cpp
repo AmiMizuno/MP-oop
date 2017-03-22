@@ -6,6 +6,7 @@ namespace flora
 
 void bush::inData(std::ifstream &ifst)
 {
+	plant::inData(ifst);
 	std::string month;
 	ifst >> month;
 	if (month == "January")
@@ -53,7 +54,8 @@ void bush::outData(std::ofstream &ofst)
 		case bush::DECEMBER : month = "December"; break;
 		default : break;
 	}
-	ofst << "This is a bush: flowering month = " << month << ", name = " << plant::name << std::endl;
+	ofst << "This is a bush: flowering month = " << month << ". ";
+	plant::outData(ofst);
 }
 
 }

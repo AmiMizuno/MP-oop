@@ -1,11 +1,12 @@
 #include "plant.h"
 #include "tree.h"
 #include "bush.h"
+#include <iostream>
+#include <cctype>
 
 namespace flora
 {
-// ¬вод параметров обобщенной фигуры 
-// из стандартного потока ввода
+
 plant* plant::in(std::ifstream &ifst)
 {
 	plant *p;
@@ -22,12 +23,39 @@ plant* plant::in(std::ifstream &ifst)
 		default:
 			return 0;
 	}
-	std::string name;
-	ifst >> name;
-	p->name = name;
 	p->inData(ifst);
 	return p;
 }
 
+bool plant::compare(plant &b)
+{
+	return consonant_count() < b.consonant_count();
+}
+
+int plant::consonant_count()
+{
+	int consonsnts = 0;
+	for (int i = 0, length = name.size(); i < length; i++)
+	{
+		char c = name[i];
+		if (!isalpha(c))
+			continue;
+		c = tolower(c);
+		if (c == 'a' || c == 'i' || c == 'u' || c == 'o' || c == 'e')
+			continue;
+		consonsnts++;
+	}
+	return consonsnts;
+}
+
+void plant::inData(std::ifstream &ifst)
+{
+	ifst >> name;
+}
+
+void plant::outData(std::ofstream &ofst)
+{
+	ofst << "Name = " << plant::name << ", consonant count = " << consonant_count() << std::endl;
+}
 
 }
