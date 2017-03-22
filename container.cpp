@@ -19,6 +19,7 @@ void container::clear()
 	len = 0;
 }
 
+<<<<<<< HEAD
 void container::sort()
 {
 	container::element* a = head;
@@ -56,6 +57,8 @@ void container::sort()
 }
 
 
+=======
+>>>>>>> filter-out
 void container::in(std::ifstream &ifst)
 {
 	while (!ifst.eof())
@@ -87,6 +90,20 @@ void container::out(std::ofstream &ofst)
 		current = current->next;
 	}
 }
+<<<<<<< HEAD
+=======
+void container::outTrees(std::ofstream &ofst)
+{
+	ofst << "Container contains " << len << " elements." << std::endl;
+	ofst << "Output only trees." << std::endl;
+	container::element* current = head;
+	while (current != NULL)
+	{
+		(current->p)->outTree(ofst);
+		current = current->next;
+	}
+}
+>>>>>>> filter-out
 
 container::container() : head(NULL), tail(NULL), len(0)
 {

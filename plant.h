@@ -21,6 +21,7 @@ public:
 	int consonant_count();
 	virtual void inData(std::ifstream &ifst);
 	virtual void outData(std::ofstream &ofst);
+	virtual void outTree(std::ofstream &ofst);
 	virtual ~plant() {}
 
 };

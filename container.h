@@ -23,6 +23,7 @@ public:
 	void sort();
 	void in(std::ifstream &ifst);
 	void out(std::ofstream &ofst);
+	void outTrees(std::ofstream &ofst);
 
 	container();
 	~container();

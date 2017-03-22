@@ -5,7 +5,6 @@
 #include <iostream>
 #include <cctype>
 
-
 namespace flora
 {
 
@@ -93,5 +92,10 @@ void plant::outData(std::ofstream &ofst)
 	ofst << "Name = " << plant::name << ", habitat = " << habitat_out <<
 			", consonant count = " << consonant_count() << std::endl;
 }
+
+void plant::outTree(std::ofstream &ofst)
+{
+}
+
 
 }
