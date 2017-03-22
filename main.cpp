@@ -19,6 +19,7 @@ int main(int argc, char* argv[])
 	container c;
 	c.in(ifst);
 	ofst << "Filled container. " << endl;
+	c.sort();
 	c.out(ofst);
 	ofst << endl;
 	c.clear();

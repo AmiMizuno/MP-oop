@@ -19,6 +19,43 @@ void container::clear()
 	len = 0;
 }
 
+void container::sort()
+{
+	container::element* a = head;
+	container::element* prevA = NULL;
+	while (a != NULL)
+	{
+		container::element* b = a->next;
+		container::element* prevB = a;
+		while (b != NULL)
+		{
+			if ((a->p)->compare(*(b->p)))
+			{
+				container::element *tmp = a;
+				container::element *tmp_next = a->next;
+				if (!prevA)
+					head = b;
+				else
+					prevA->next = b;
+				prevB->next = a;
+				a->next = b->next;
+				if (tmp_next != b)
+					b->next = tmp_next;
+				else
+					b->next = a;
+				a = b;
+				b = tmp;
+			}
+			tail = b;
+			prevB = b;
+			b = b->next;
+		}
+		prevA = a;
+		a = a->next;
+	}
+}
+
+
 void container::in(std::ifstream &ifst)
 {
 	while (!ifst.eof())

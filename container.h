@@ -20,6 +20,7 @@ class container
 
 public:
 	void clear();
+	void sort();
 	void in(std::ifstream &ifst);
 	void out(std::ofstream &ofst);
 
