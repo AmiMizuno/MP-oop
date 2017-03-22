@@ -20,6 +20,8 @@ int main(int argc, char* argv[])
 	c.in(ifst);
 	ofst << "Filled container. " << endl;
 	c.out(ofst);
+	ofst << endl;
+	c.outTrees(ofst);
 	c.clear();
 	ofst << "Empty container. " << endl;
 	c.out(ofst);

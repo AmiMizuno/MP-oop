@@ -7,7 +7,7 @@
 namespace flora
 {
 
-struct container
+class container
 {
 
 	struct element
@@ -18,9 +18,11 @@ struct container
 	element* head, * tail;
 	int len;
 
+public:
 	void clear();
 	void in(std::ifstream &ifst);
 	void out(std::ofstream &ofst);
+	void outTrees(std::ofstream &ofst);
 
 	container();
 	~container();
