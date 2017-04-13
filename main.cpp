@@ -4,7 +4,6 @@
 #include "container.h"
 
 using namespace std;
-using namespace flora;
 
 int main(int argc, char* argv[])
 {
@@ -14,10 +13,27 @@ int main(int argc, char* argv[])
 		exit(1);
 	}
 	ifstream ifst(argv[1]);
-	ofstream ofst(argv[2]);
+    if(!ifst)
+    {
+        cout << "No input file found!" << endl;
+        return 0;
+
+    }
+
+
 	cout << "Start" << endl;
 	container c;
 	c.in(ifst);
+    if (ifst.fail())
+
+        {
+
+            cout << "Wrong input!" << endl;
+
+            return 0;
+
+        }
+    ofstream ofst(argv[2]);
 	ofst << "Filled container. " << endl;
 	c.sort();
 	c.out(ofst);

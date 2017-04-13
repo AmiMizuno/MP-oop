@@ -4,8 +4,7 @@
 #include <fstream>
 #include "plant.h"
 
-namespace flora
-{
+
 
 class container
 {
@@ -31,6 +30,5 @@ public:
 
 };
 
-}
 
 #endif // CONTAINER_H

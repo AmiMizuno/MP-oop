@@ -1,7 +1,6 @@
 #include "tree.h"
 
-namespace flora
-{
+
 
 void tree::inData(std::ifstream &ifst)
 {
@@ -20,4 +19,4 @@ void tree::outTree(std::ofstream &ofst)
 	outData(ofst);
 }
 
-}
+

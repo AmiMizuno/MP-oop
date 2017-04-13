@@ -4,8 +4,7 @@
 #include "plant.h"
 #include <fstream>
 
-namespace flora
-{
+
 
 class flower : public plant
 {
@@ -16,6 +15,5 @@ public:
 	virtual void outData(std::ofstream &ofst);
 };
 
-}
 
 #endif // FLOWER_H

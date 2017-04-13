@@ -1,8 +1,7 @@
 #include "bush.h"
 #include <string>
 
-namespace flora
-{
+
 
 void bush::inData(std::ifstream &ifst)
 {
@@ -58,4 +57,4 @@ void bush::outData(std::ofstream &ofst)
 	plant::outData(ofst);
 }
 
-}
+

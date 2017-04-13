@@ -4,8 +4,6 @@
 #include "plant.h"
 #include <fstream>
 
-namespace flora
-{
 
 struct bush : public plant
 {
@@ -17,6 +15,5 @@ public:
 };
 
 
-}
 
 #endif // BUSH_H

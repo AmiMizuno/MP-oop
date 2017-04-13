@@ -1,7 +1,6 @@
 #include "flower.h"
 
-namespace flora
-{
+
 
 void flower::inData(std::ifstream &ifst)
 {
@@ -30,4 +29,4 @@ void flower::outData(std::ofstream &ofst)
 	plant::outData(ofst);
 }
 
-}
+

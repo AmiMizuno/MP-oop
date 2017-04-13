@@ -4,8 +4,7 @@
 #include <string>
 #include <fstream>
 
-namespace flora
-{
+
 
 class plant
 {
@@ -26,6 +25,6 @@ public:
 
 };
 
-}
+
 
 #endif // PLANT_H

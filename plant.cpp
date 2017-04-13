@@ -5,8 +5,6 @@
 #include <iostream>
 #include <cctype>
 
-namespace flora
-{
 
 plant* plant::in(std::ifstream &ifst)
 {
@@ -98,4 +96,4 @@ void plant::outTree(std::ofstream &ofst)
 }
 
 
-}
+

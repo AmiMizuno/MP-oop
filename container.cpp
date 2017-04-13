@@ -2,8 +2,7 @@
 #include "plant.h"
 #include <iostream>
 
-namespace flora
-{
+
 
 void container::clear()
 {
@@ -59,7 +58,7 @@ void container::sort()
 void container::in(std::ifstream &ifst)
 {
 	while (!ifst.eof())
-	{
+    {
 		plant* p = plant::in(ifst);
 		if (p == NULL)
 			break;
@@ -109,4 +108,4 @@ container::~container()
 	clear();
 }
 
-}
+
