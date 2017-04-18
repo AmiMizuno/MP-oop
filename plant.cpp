@@ -1,44 +1,40 @@
-#include "plant.h"
+#include "Plant.h"
 #include "tree.h"
 #include "bush.h"
 #include "flower.h"
 #include <iostream>
 #include <cctype>
 
-
-plant* plant::in(std::ifstream &ifst)
-{
-	plant *p;
+Plant* Plant::in(std::ifstream &ifst) {
+    Plant *p;
 	int k;
 	ifst >> k;
-	switch (k)
-	{
+    switch (k) {
 		case 1:
-			p = new tree;
+            p = new Tree;
 			break;
 		case 2:
-			p = new bush;
+            p = new Bush;
 			break;
 		case 3:
-			p = new flower;
+            p = new Flower;
 			break;
 		default:
 			return 0;
 	}
-	p->inData(ifst);
+    p->in_data(ifst);
 	return p;
 }
 
-bool plant::compare(plant &b)
+bool Plant::compare(Plant &b)
 {
 	return consonant_count() < b.consonant_count();
 }
 
-int plant::consonant_count()
+int Plant::consonant_count()
 {
 	int consonsnts = 0;
-	for (int i = 0, length = name.size(); i < length; i++)
-	{
+    for (int i = 0, length = name.size(); i < length; i++) {
 		char c = name[i];
 		if (!isalpha(c))
 			continue;
@@ -50,49 +46,49 @@ int plant::consonant_count()
 	return consonsnts;
 }
 
-void plant::inData(std::ifstream &ifst)
+void Plant::in_data(std::ifstream &ifst)
 {
 	ifst >> name;
 	std::string habitat_in;
 	ifst >> habitat_in;
 
 	if (habitat_in == "Tundra")
-		habitat = plant::TUNDRA;
+        habitat = Plant::TUNDRA;
 	else if (habitat_in == "Desert")
-		habitat = plant::DESERT;
+        habitat = Plant::DESERT;
 	else if (habitat_in == "Steppe")
-		habitat = plant::STEPPE;
+        habitat = Plant::STEPPE;
 	else if (habitat_in == "Forest")
-		habitat = plant::FOREST;
+        habitat = Plant::FOREST;
 }
 
-void plant::outData(std::ofstream &ofst)
+void Plant::out_data(std::ofstream &ofst)
 {
 	std::string habitat_out = "";
-	switch (habitat)
-	{
-		case plant::TUNDRA:
+    switch (habitat) {
+        case Plant::TUNDRA:
 			habitat_out = "Tundra";
 			break;
-		case plant::DESERT:
+        case Plant::DESERT:
 			habitat_out = "Desert";
 			break;
-		case plant::STEPPE:
+        case Plant::STEPPE:
 			habitat_out = "Steppe";
 			break;
-		case plant::FOREST:
+        case Plant::FOREST:
 			habitat_out = "Forest";
 			break;
 		default:
 			ofst << "Incorrect habitat!" << std::endl;
 			return;
 	}
-	ofst << "Name = " << plant::name << ", habitat = " << habitat_out <<
+    ofst << "Name = " << Plant::name << ", habitat = " << habitat_out <<
 			", consonant count = " << consonant_count() << std::endl;
 }
 
-void plant::outTree(std::ofstream &ofst)
+void Plant::out_tree(std::ofstream &ofst)
 {
+
 }
 
 

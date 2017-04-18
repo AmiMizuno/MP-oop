@@ -1,30 +1,24 @@
 #ifndef PLANT_H
 #define PLANT_H
-
 #include <string>
 #include <fstream>
 
-
-
-class plant
+class Plant
 {
 protected:
 	enum zone { TUNDRA, DESERT, STEPPE, FOREST };
-	plant() {}
+    Plant() {}
 private:
 	std::string name;
 	zone habitat;
 public:
-	static plant *in(std::ifstream &ifst);
-	bool compare(plant &b);
+    static Plant *in(std::ifstream &ifst);
+    bool compare(Plant &b);
 	int consonant_count();
-	virtual void inData(std::ifstream &ifst);
-	virtual void outData(std::ofstream &ofst);
-	virtual void outTree(std::ofstream &ofst);
-	virtual ~plant() {}
-
+    virtual void in_data(std::ifstream &ifst);
+    virtual void out_data(std::ofstream &ofst);
+    virtual void out_tree(std::ofstream &ofst);
+    virtual ~Plant() {}
 };
-
-
 
 #endif // PLANT_H

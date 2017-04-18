@@ -1,60 +1,57 @@
 #include "bush.h"
 #include <string>
 
-
-
-void bush::inData(std::ifstream &ifst)
+void Bush::in_data(std::ifstream &ifst)
 {
-	plant::inData(ifst);
+    Plant::in_data(ifst);
 	std::string month;
 	ifst >> month;
 	if (month == "January")
-		flowering = bush::JANUARY;
+        flowering = Bush::JANUARY;
 	else if (month == "February")
-		flowering = bush::FEBRUARY;
+        flowering = Bush::FEBRUARY;
 	else if (month == "March")
-		flowering = bush::MARCH;
+        flowering = Bush::MARCH;
 	else if (month == "April")
-		flowering = bush::APRIL;
+        flowering = Bush::APRIL;
 	else if (month == "May")
-		flowering = bush::MAY;
+        flowering = Bush::MAY;
 	else if (month == "June")
-		flowering = bush::JUNE;
+        flowering = Bush::JUNE;
 	else if (month == "July")
-		flowering = bush::JULY;
+        flowering = Bush::JULY;
 	else if (month == "August")
-		flowering = bush::AUGUST;
+        flowering = Bush::AUGUST;
 	else if (month == "September")
-		flowering = bush::SEPTEMBER;
+        flowering = Bush::SEPTEMBER;
 	else if (month == "October")
-		flowering = bush::OCTOBER;
+        flowering = Bush::OCTOBER;
 	else if (month == "November")
-		flowering = bush::NOVEMBER;
+        flowering = Bush::NOVEMBER;
 	else if (month == "December")
-		flowering = bush::DECEMBER;
+        flowering = Bush::DECEMBER;
 }
 
-void bush::outData(std::ofstream &ofst)
+void Bush::out_data(std::ofstream &ofst)
 {
 	std::string month;
-	switch (flowering)
-	{
-		case bush::JANUARY : month = "January"; break;
-		case bush::FEBRUARY : month = "February"; break;
-		case bush::MARCH : month = "March"; break;
-		case bush::APRIL : month = "April"; break;
-		case bush::MAY : month = "May"; break;
-		case bush::JUNE : month = "June"; break;
-		case bush::JULY : month = "July"; break;
-		case bush::AUGUST : month = "August"; break;
-		case bush::SEPTEMBER : month = "September"; break;
-		case bush::OCTOBER : month = "October"; break;
-		case bush::NOVEMBER : month = "November"; break;
-		case bush::DECEMBER : month = "December"; break;
+	switch (flowering){
+        case Bush::JANUARY : month = "January"; break;
+        case Bush::FEBRUARY : month = "February"; break;
+        case Bush::MARCH : month = "March"; break;
+        case Bush::APRIL : month = "April"; break;
+        case Bush::MAY : month = "May"; break;
+        case Bush::JUNE : month = "June"; break;
+        case Bush::JULY : month = "July"; break;
+        case Bush::AUGUST : month = "August"; break;
+        case Bush::SEPTEMBER : month = "September"; break;
+        case Bush::OCTOBER : month = "October"; break;
+        case Bush::NOVEMBER : month = "November"; break;
+        case Bush::DECEMBER : month = "December"; break;
 		default : break;
 	}
-	ofst << "This is a bush: flowering month = " << month << ". ";
-	plant::outData(ofst);
+    ofst << "This is a bush: flowering month = " << month << ". ";
+    Plant::out_data(ofst);
 }
 
 

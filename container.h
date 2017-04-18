@@ -1,34 +1,25 @@
 #ifndef CONTAINER_H
 #define CONTAINER_H
-
 #include <fstream>
-#include "plant.h"
+#include "Plant.h"
 
-
-
-class container
+class Container
 {
-
 	struct element
 	{
-		plant* p;
+        Plant* p;
 		element* next;
 	};
 	element* head, * tail;
 	int len;
-
 public:
 	void clear();
 	void sort();
 	void in(std::ifstream &ifst);
 	void out(std::ofstream &ofst);
-	void outTrees(std::ofstream &ofst);
-
-	container();
-	~container();
-
-
+    void out_trees(std::ofstream &ofst);
+    Container();
+    ~Container();
 };
-
 
 #endif // CONTAINER_H

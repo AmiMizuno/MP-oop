@@ -1,22 +1,20 @@
 #include "tree.h"
 
-
-
-void tree::inData(std::ifstream &ifst)
+void Tree::in_data(std::ifstream &ifst)
 {
-	plant::inData(ifst);
+    Plant::in_data(ifst);
 	ifst >> age;
 }
 
-void tree::outData(std::ofstream &ofst)
+void Tree::out_data(std::ofstream &ofst)
 {
 	ofst << "This is a tree: age = " << age << " years. ";
-	plant::outData(ofst);
+    Plant::out_data(ofst);
 }
 
-void tree::outTree(std::ofstream &ofst)
+void Tree::out_tree(std::ofstream &ofst)
 {
-	outData(ofst);
+    out_data(ofst);
 }
 
 

@@ -1,14 +1,11 @@
 #include "container.h"
-#include "plant.h"
+#include "Plant.h"
 #include <iostream>
 
-
-
-void container::clear()
+void Container::clear()
 {
-	while (head != NULL)
-	{
-		container::element* tmp = head->next;
+	while (head != NULL){
+        Container::element* tmp = head->next;
 		delete head->p;
 		delete head;
 		head = tmp;
@@ -18,20 +15,17 @@ void container::clear()
 	len = 0;
 }
 
-void container::sort()
+void Container::sort()
 {
-	container::element* a = head;
-	container::element* prevA = NULL;
-	while (a != NULL)
-	{
-		container::element* b = a->next;
-		container::element* prevB = a;
-		while (b != NULL)
-		{
-			if ((a->p)->compare(*(b->p)))
-			{
-				container::element *tmp = a;
-				container::element *tmp_next = a->next;
+    Container::element* a = head;
+    Container::element* prevA = NULL;
+	while (a != NULL){
+        Container::element* b = a->next;
+        Container::element* prevB = a;
+		while (b != NULL){
+			if ((a->p)->compare(*(b->p))){
+                Container::element *tmp = a;
+                Container::element *tmp_next = a->next;
 				if (!prevA)
 					head = b;
 				else
@@ -54,15 +48,14 @@ void container::sort()
 	}
 }
 
-
-void container::in(std::ifstream &ifst)
+void Container::in(std::ifstream &ifst)
 {
 	while (!ifst.eof())
     {
-		plant* p = plant::in(ifst);
+        Plant* p = Plant::in(ifst);
 		if (p == NULL)
 			break;
-		container::element* elem = new container::element;
+        Container::element* elem = new Container::element;
 		elem->p = p;
 		elem->next = NULL;
 		if (head == NULL)
@@ -76,36 +69,33 @@ void container::in(std::ifstream &ifst)
 	}
 }
 
-void container::out(std::ofstream &ofst)
+void Container::out(std::ofstream &ofst)
 {
-	ofst << "Container contains " << len << " elements." << std::endl;
-	container::element* current = head;
-	while (current != NULL)
-	{
-		(current->p)->outData(ofst);
+    ofst << "Container contains " << len << " elements." << std::endl;
+    Container::element* current = head;
+	while (current != NULL){
+        (current->p)->out_data(ofst);
 		current = current->next;
 	}
 }
 
-void container::outTrees(std::ofstream &ofst)
+void Container::out_trees(std::ofstream &ofst)
 {
-	ofst << "Container contains " << len << " elements." << std::endl;
+    ofst << "Container contains " << len << " elements." << std::endl;
 	ofst << "Output only trees." << std::endl;
-	container::element* current = head;
-	while (current != NULL)
-	{
-		(current->p)->outTree(ofst);
+    Container::element* current = head;
+	while (current != NULL){
+        (current->p)->out_tree(ofst);
 		current = current->next;
 	}
 }
 
-container::container() : head(NULL), tail(NULL), len(0)
+Container::Container() : head(NULL), tail(NULL), len(0)
 {
+
 }
 
-container::~container()
+Container::~Container()
 {
 	clear();
 }
-
-
