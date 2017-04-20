@@ -25,6 +25,8 @@ int main(int argc, char* argv[])
         }
     ofstream ofst(argv[2]);
 	ofst << "Filled container. " << endl;
+    c.out(ofst);
+    ofst << "Sorted container. " << endl;
 	c.sort();
 	c.out(ofst);
 	ofst << endl;
