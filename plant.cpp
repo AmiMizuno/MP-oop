@@ -4,11 +4,11 @@
 #include "flower.h"
 #include <iostream>
 #include <cctype>
-
+using namespace std;
 Plant* Plant::in(std::ifstream &ifst) {
     Plant *p;
 	int k;
-	ifst >> k;
+	k = check_number(ifst, k);
     switch (k) {
 		case 1:
             p = new Tree;
@@ -50,32 +50,37 @@ void Plant::in_data(std::ifstream &ifst)
 {
 	ifst >> name;
 	std::string habitat_in;
-	ifst >> habitat_in;
+	habitat_in = check_data(ifst, habitat_in);
 
 	if (habitat_in == "Tundra")
-        habitat = Plant::TUNDRA;
+		habitat = TUNDRA;
 	else if (habitat_in == "Desert")
-        habitat = Plant::DESERT;
+		habitat = DESERT;
 	else if (habitat_in == "Steppe")
-        habitat = Plant::STEPPE;
+		habitat = STEPPE;
 	else if (habitat_in == "Forest")
-        habitat = Plant::FOREST;
+		habitat = FOREST;
+	else
+	{
+		cout << "Wrong habitat (Plant)!" << endl;
+		exit(1);
+	}
 }
 
 void Plant::out_data(std::ofstream &ofst)
 {
 	std::string habitat_out = "";
     switch (habitat) {
-        case Plant::TUNDRA:
+		case TUNDRA:
 			habitat_out = "Tundra";
 			break;
-        case Plant::DESERT:
+		case DESERT:
 			habitat_out = "Desert";
 			break;
-        case Plant::STEPPE:
+		case STEPPE:
 			habitat_out = "Steppe";
 			break;
-        case Plant::FOREST:
+		case FOREST:
 			habitat_out = "Forest";
 			break;
 		default:
@@ -90,6 +95,30 @@ void Plant::out_tree(std::ofstream &ofst)
 {
 
 }
-
+std::string Plant::check_data(std::ifstream &ifst, std::string data)
+{
+	ifst >> data;
+	if (ifst.fail())
+	{
+		cout << "Error while reading file!" << endl;
+		exit(1);
+	}
+	return data;
+}
+int Plant::check_number(std::ifstream &ifst, int data)
+{
+	ifst >> data;
+	if (ifst.fail())
+	{
+		cout << "Error while reading file!" << endl;
+		exit(1);
+	}
+	if ((data < 1)||(data > 3))
+	{
+		cout << "Incorrect key!" << endl;
+		exit(1);
+	}
+	return data;
+}
 
 

@@ -5,12 +5,11 @@
 #include <fstream>
 
 
-
+enum zone { TUNDRA, DESERT, STEPPE, FOREST };
 class plant
 {
 protected:
-	enum zone { TUNDRA, DESERT, STEPPE, FOREST };
-//	plant() {};
+	//	plant() {};
 public:
 	std::string name;
 	zone habitat;

@@ -9,29 +9,29 @@ void bush::inData(std::ifstream &ifst)
 	std::string month;
 	ifst >> month;
 	if (month == "January")
-		flowering = bush::JANUARY;
+		flowering = JANUARY;
 	else if (month == "February")
-		flowering = bush::FEBRUARY;
+		flowering = FEBRUARY;
 	else if (month == "March")
-		flowering = bush::MARCH;
+		flowering = MARCH;
 	else if (month == "April")
-		flowering = bush::APRIL;
+		flowering = APRIL;
 	else if (month == "May")
-		flowering = bush::MAY;
+		flowering = MAY;
 	else if (month == "June")
-		flowering = bush::JUNE;
+		flowering = JUNE;
 	else if (month == "July")
-		flowering = bush::JULY;
+		flowering = JULY;
 	else if (month == "August")
-		flowering = bush::AUGUST;
+		flowering = AUGUST;
 	else if (month == "September")
-		flowering = bush::SEPTEMBER;
+		flowering = SEPTEMBER;
 	else if (month == "October")
-		flowering = bush::OCTOBER;
+		flowering = OCTOBER;
 	else if (month == "November")
-		flowering = bush::NOVEMBER;
+		flowering = NOVEMBER;
 	else if (month == "December")
-		flowering = bush::DECEMBER;
+		flowering = DECEMBER;
 }
 
 void bush::outData(std::ofstream &ofst)
@@ -39,18 +39,18 @@ void bush::outData(std::ofstream &ofst)
 	std::string month;
 	switch (flowering)
 	{
-		case bush::JANUARY : month = "January"; break;
-		case bush::FEBRUARY : month = "February"; break;
-		case bush::MARCH : month = "March"; break;
-		case bush::APRIL : month = "April"; break;
-		case bush::MAY : month = "May"; break;
-		case bush::JUNE : month = "June"; break;
-		case bush::JULY : month = "July"; break;
-		case bush::AUGUST : month = "August"; break;
-		case bush::SEPTEMBER : month = "September"; break;
-		case bush::OCTOBER : month = "October"; break;
-		case bush::NOVEMBER : month = "November"; break;
-		case bush::DECEMBER : month = "December"; break;
+		case JANUARY : month = "January"; break;
+		case FEBRUARY : month = "February"; break;
+		case MARCH : month = "March"; break;
+		case APRIL : month = "April"; break;
+		case MAY : month = "May"; break;
+		case JUNE : month = "June"; break;
+		case JULY : month = "July"; break;
+		case AUGUST : month = "August"; break;
+		case SEPTEMBER : month = "September"; break;
+		case OCTOBER : month = "October"; break;
+		case NOVEMBER : month = "November"; break;
+		case DECEMBER : month = "December"; break;
 		default : break;
 	}
 	ofst << "This is a bush: flowering month = " << month << ". ";

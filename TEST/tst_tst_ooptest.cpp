@@ -32,6 +32,7 @@ private Q_SLOTS:
     void TestConsonant_count2();
     void TestConsonant_count3();
     void TestConsonant_count4();
+	void TestCompare_data();
     void TestCompare();
     void TestCompare2();
     void TestCompare3();
@@ -341,6 +342,27 @@ void Tst_oopTest::TestConsonant_count4()
     int exp=20;
     QCOMPARE(act, exp);
     }
+/*void Tst_oopTest::TestCompare_data()
+{
+	QTest::addColumn<std::string>("name1");
+	QTest::addColumn<std::string>("name2");
+	QTest::addColumn<bool>("exp");
+	QTest::newRow("compare01") << "beresa" << "romashka" << true;
+	QTest::newRow("compare02") << "romashka" << "beresa" << false;
+	QTest::newRow("compare03") << "romashka" << "romashka" << false;  //альтернатива TestCompare, позволяет сделать тесты независимыми друг от друга
+}
+ void Tst_oopTest::TestCompare()
+ {
+	QFETCH(std::string, name1);
+	QFETCH(std::string, name2);
+	QFETCH(bool, exp);
+	plant a;
+	a.name=name1;
+	plant b;
+	b.name=name2;
+	bool act= a.compare(b);
+	QCOMPARE(act, exp);
+ }*/
 //тест сравнения меньше больше
 void Tst_oopTest::TestCompare()
 {

@@ -10,7 +10,6 @@ class container
 {
 
 
-
 public:
 	void clear();
 	void sort();

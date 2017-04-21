@@ -5,10 +5,9 @@
 #include <fstream>
 
 
-
+enum area { HOME, GARDEN, WILD };
 class flower : public plant
 {
-	enum area { HOME, GARDEN, WILD };
 	area growing;
 public:
 	virtual void inData(std::ifstream &ifst);

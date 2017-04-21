@@ -24,9 +24,13 @@ int main(int argc, char* argv[])
             return 0;
         }
     ofstream ofst(argv[2]);
+	if(!ofst) {
+		cout << "No output file found!" << endl;
+		return 0;
+	}
 	ofst << "Filled container. " << endl;
-    c.out(ofst);
-    ofst << "Sorted container. " << endl;
+	c.out(ofst);
+	ofst << "Sorted container. " << endl;
 	c.sort();
 	c.out(ofst);
 	ofst << endl;
@@ -34,6 +38,8 @@ int main(int argc, char* argv[])
 	c.clear();
 	ofst << "Empty container. " << endl;
 	c.out(ofst);
+	ifst.close();
+	ofst.close();
 	cout << "Stop" << endl;
 	return 0;
 }

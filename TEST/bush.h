@@ -4,10 +4,9 @@
 #include "plant.h"
 #include <fstream>
 
-
+enum month { JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER };
 struct bush : public plant
 {
-	enum month { JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER };
 	month flowering;
 public:
 	void inData(std::ifstream &ifst);

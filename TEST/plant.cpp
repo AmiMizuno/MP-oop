@@ -57,13 +57,13 @@ void plant::inData(std::ifstream &ifst)
 	ifst >> habitat_in;
 
 	if (habitat_in == "Tundra")
-		habitat = plant::TUNDRA;
+		habitat = TUNDRA;
 	else if (habitat_in == "Desert")
-		habitat = plant::DESERT;
+		habitat = DESERT;
 	else if (habitat_in == "Steppe")
-		habitat = plant::STEPPE;
+		habitat = STEPPE;
 	else if (habitat_in == "Forest")
-		habitat = plant::FOREST;
+		habitat = FOREST;
 }
 
 void plant::outData(std::ofstream &ofst)
@@ -71,16 +71,16 @@ void plant::outData(std::ofstream &ofst)
 	std::string habitat_out = "";
 	switch (habitat)
 	{
-		case plant::TUNDRA:
+		case TUNDRA:
 			habitat_out = "Tundra";
 			break;
-		case plant::DESERT:
+		case DESERT:
 			habitat_out = "Desert";
 			break;
-		case plant::STEPPE:
+		case STEPPE:
 			habitat_out = "Steppe";
 			break;
-		case plant::FOREST:
+		case FOREST:
 			habitat_out = "Forest";
 			break;
 		default:

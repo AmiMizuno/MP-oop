@@ -1,57 +1,70 @@
 #include "bush.h"
 #include <string>
-
 void Bush::in_data(std::ifstream &ifst)
 {
     Plant::in_data(ifst);
 	std::string month;
-	ifst >> month;
+	month = check_data(ifst,month);
 	if (month == "January")
-        flowering = Bush::JANUARY;
+		flowering = JANUARY;
 	else if (month == "February")
-        flowering = Bush::FEBRUARY;
+		flowering = FEBRUARY;
 	else if (month == "March")
-        flowering = Bush::MARCH;
+		flowering = MARCH;
 	else if (month == "April")
-        flowering = Bush::APRIL;
+		flowering = APRIL;
 	else if (month == "May")
-        flowering = Bush::MAY;
+		flowering = MAY;
 	else if (month == "June")
-        flowering = Bush::JUNE;
+		flowering = JUNE;
 	else if (month == "July")
-        flowering = Bush::JULY;
+		flowering = JULY;
 	else if (month == "August")
-        flowering = Bush::AUGUST;
+		flowering = AUGUST;
 	else if (month == "September")
-        flowering = Bush::SEPTEMBER;
+		flowering = SEPTEMBER;
 	else if (month == "October")
-        flowering = Bush::OCTOBER;
+		flowering = OCTOBER;
 	else if (month == "November")
-        flowering = Bush::NOVEMBER;
+		flowering = NOVEMBER;
 	else if (month == "December")
-        flowering = Bush::DECEMBER;
+		flowering = DECEMBER;
+	else
+	{
+		cout << "Wrong month flowering!" << endl;
+		exit(1);
+	}
 }
 
 void Bush::out_data(std::ofstream &ofst)
 {
 	std::string month;
 	switch (flowering){
-        case Bush::JANUARY : month = "January"; break;
-        case Bush::FEBRUARY : month = "February"; break;
-        case Bush::MARCH : month = "March"; break;
-        case Bush::APRIL : month = "April"; break;
-        case Bush::MAY : month = "May"; break;
-        case Bush::JUNE : month = "June"; break;
-        case Bush::JULY : month = "July"; break;
-        case Bush::AUGUST : month = "August"; break;
-        case Bush::SEPTEMBER : month = "September"; break;
-        case Bush::OCTOBER : month = "October"; break;
-        case Bush::NOVEMBER : month = "November"; break;
-        case Bush::DECEMBER : month = "December"; break;
+		case JANUARY : month = "January"; break;
+		case FEBRUARY : month = "February"; break;
+		case MARCH : month = "March"; break;
+		case APRIL : month = "April"; break;
+		case MAY : month = "May"; break;
+		case JUNE : month = "June"; break;
+		case JULY : month = "July"; break;
+		case AUGUST : month = "August"; break;
+		case SEPTEMBER : month = "September"; break;
+		case OCTOBER : month = "October"; break;
+		case NOVEMBER : month = "November"; break;
+		case DECEMBER : month = "December"; break;
 		default : break;
 	}
     ofst << "This is a bush: flowering month = " << month << ". ";
     Plant::out_data(ofst);
 }
-
+std::string Bush::check_data(std::ifstream &ifst, std::string data)
+{
+	ifst >> data;
+	if (ifst.fail())
+	{
+		cout << "Error while reading file!" << endl;
+		exit(1);
+	}
+	return data;
+}
 
