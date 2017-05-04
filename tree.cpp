@@ -1,20 +1,43 @@
 #include "tree.h"
 
-void Tree::in_data(std::ifstream &ifst)
+
+
+void tree::inData(std::ifstream &ifst)
 {
-    Plant::in_data(ifst);
+	plant::inData(ifst);
 	ifst >> age;
 }
 
-void Tree::out_data(std::ofstream &ofst)
+void tree::outData(std::ofstream &ofst)
 {
 	ofst << "This is a tree: age = " << age << " years. ";
-    Plant::out_data(ofst);
+	plant::outData(ofst);
 }
 
-void Tree::out_tree(std::ofstream &ofst)
+void tree::outTree(std::ofstream &ofst)
 {
-    out_data(ofst);
+	outData(ofst);
+}
+
+void tree::multimethod(plant *other, std::ofstream &ofst)
+{
+	other->mmTree(ofst);
+}
+//Тип первого аргумента определяется автоматически
+//вызывается один из обработчиков специализации второго аргумента
+void tree::mmTree(std::ofstream &ofst)
+{
+	ofst << "Tree and Tree" << std::endl;
+}
+//функции-диспетчеры, осуществляющие переход к анализу второго аргумента
+void tree::mmBush(std::ofstream &ofst)
+{
+	ofst << "Bush and Tree" << std::endl;
+}
+
+void tree::mmFlower(std::ofstream &ofst)
+{
+	ofst << "Flower and Tree" << std::endl;
 }
 
 

@@ -2,10 +2,8 @@
 #include <string>
 
 
-
 void bush::inData(std::ifstream &ifst)
 {
-	plant::inData(ifst);
 	std::string month;
 	ifst >> month;
 	if (month == "January")
@@ -53,29 +51,22 @@ void bush::outData(std::ofstream &ofst)
 		case bush::DECEMBER : month = "December"; break;
 		default : break;
 	}
-	ofst << "This is a bush: flowering month = " << month << ". ";
-	plant::outData(ofst);
+	ofst << "This is a bush: flowering month = " << month << ", name = " << plant::name << std::endl;
 }
 
 void bush::multimethod(plant *other, std::ofstream &ofst)
 {
 	other->mmBush(ofst);
 }
-//Тип первого аргумента определяется автоматически
-//вызывается один из обработчиков специализации второго аргумента
+
 void bush::mmTree(std::ofstream &ofst)
 {
 	ofst << "Tree and Bush" << std::endl;
 }
-//функции-диспетчеры, осуществляющие переход к анализу второго аргумента
+
 void bush::mmBush(std::ofstream &ofst)
 {
 	ofst << "Bush and Bush" << std::endl;
-}
-
-void bush::mmFlower(std::ofstream &ofst)
-{
-	ofst << "Flower and Bush" << std::endl;
 }
 
 

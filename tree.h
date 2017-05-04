@@ -1,15 +1,24 @@
 #ifndef TREE_H
 #define TREE_H
+
 #include "plant.h"
 #include <fstream>
 
-class Tree : public Plant
+
+
+class tree : public plant
 {
 	long int age;
 public:
-    virtual void in_data(std::ifstream &ifst);
-    virtual void out_data(std::ofstream &ofst);
-    virtual void out_tree(std::ofstream &ofst);
+	virtual void inData(std::ifstream &ifst);
+	virtual void outData(std::ofstream &ofst);
+	virtual void outTree(std::ofstream &ofst);
+	virtual void multimethod(plant *other, std::ofstream &ofst);
+	virtual void mmTree(std::ofstream &ofst);
+	virtual void mmBush(std::ofstream &ofst);
+	virtual void mmFlower(std::ofstream &ofst);
 };
+
+
 
 #endif // TREE_H

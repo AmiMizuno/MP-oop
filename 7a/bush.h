@@ -15,8 +15,8 @@ public:
 	virtual void multimethod(plant *other, std::ofstream &ofst);
 	virtual void mmTree(std::ofstream &ofst);
 	virtual void mmBush(std::ofstream &ofst);
-	virtual void mmFlower(std::ofstream &ofst);
 };
+
 
 
 

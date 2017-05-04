@@ -19,10 +19,8 @@ class container
 
 public:
 	void clear();
-	void sort();
 	void in(std::ifstream &ifst);
 	void out(std::ofstream &ofst);
-	void outTrees(std::ofstream &ofst);
 	void multimethod(std::ofstream &ofst);
 
 	container();
@@ -30,6 +28,7 @@ public:
 
 
 };
+
 
 
 #endif // CONTAINER_H
