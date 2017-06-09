@@ -4,7 +4,7 @@
 
 
 
-void container::clear()
+void container::Clear()
 {
 	while (head != NULL)
 	{
@@ -18,7 +18,7 @@ void container::clear()
 	len = 0;
 }
 
-void container::sort()
+void container::Sort()
 {
 	container::element* a = head;
 	container::element* prevA = NULL;
@@ -28,7 +28,7 @@ void container::sort()
 		container::element* prevB = a;
 		while (b != NULL)
 		{
-			if ((a->p)->compare(*(b->p)))
+			if ((a->p)->Compare(*(b->p)))
 			{
 				container::element *tmp = a;
 				container::element *tmp_next = a->next;
@@ -55,11 +55,11 @@ void container::sort()
 }
 
 
-void container::in(std::ifstream &ifst)
+void container::In(std::ifstream &ifst)
 {
 	while (!ifst.eof())
     {
-		plant* p = plant::in(ifst);
+		plant* p = plant::In(ifst);
 		if (p == NULL)
 		{
 			break;
@@ -78,30 +78,30 @@ void container::in(std::ifstream &ifst)
 	}
 }
 
-void container::out(std::ofstream &ofst)
+void container::Out(std::ofstream &ofst)
 {
 	ofst << "Container contains " << len << " elements." << std::endl;
 	container::element* current = head;
 	while (current != NULL)
 	{
-		(current->p)->outData(ofst);
+		(current->p)->OutData(ofst);
 		current = current->next;
 	}
 }
 
-void container::outTrees(std::ofstream &ofst)
+void container::OutTrees(std::ofstream &ofst)
 {
 	ofst << "Container contains " << len << " elements." << std::endl;
 	ofst << "Output only trees." << std::endl;
 	container::element* current = head;
 	while (current != NULL)
 	{
-		(current->p)->outTree(ofst);
+		(current->p)->OutTree(ofst);
 		current = current->next;
 	}
 }
-//перебор всех пар
-void container::multimethod(std::ofstream &ofst)
+
+void container::Multimethod(std::ofstream &ofst)
 {
 	ofst << "Multimethod" << std::endl;
 	container::element* i = head;
@@ -110,9 +110,9 @@ void container::multimethod(std::ofstream &ofst)
 		container::element* j = i->next;
 		while (j != NULL)
 		{
-			(i->p)->multimethod(j->p, ofst);
-			(i->p)->outData(ofst);
-			(j->p)->outData(ofst);
+			(i->p)->Multimethod(j->p, ofst);
+			(i->p)->OutData(ofst);
+			(j->p)->OutData(ofst);
 			j = j->next;
 		}
 		i = i->next;

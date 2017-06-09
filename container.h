@@ -18,12 +18,12 @@ class container
 	int len;
 
 public:
-	void clear();
-	void sort();
-	void in(std::ifstream &ifst);
-	void out(std::ofstream &ofst);
-	void outTrees(std::ofstream &ofst);
-	void multimethod(std::ofstream &ofst);
+	void Clear();
+	void Sort();
+	void In(std::ifstream &ifst);
+	void Out(std::ofstream &ofst);
+	void OutTrees(std::ofstream &ofst);
+	void Multimethod(std::ofstream &ofst);
 
 	container();
 	~container();

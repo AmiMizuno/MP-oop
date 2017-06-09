@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int main(int argc, char* argv[])
+int Main(int argc, char* argv[])
 {
 	if(argc != 3)	{
 		cout << "incorrect command line! "
@@ -23,16 +23,18 @@ int main(int argc, char* argv[])
 
 	cout << "Start" << endl;
 	container c;
-	c.in(ifst);
+	c.In(ifst);
     ofstream ofst(argv[2]);
 	ofst << "Filled container. " << endl;
-	c.sort();
-	c.multimethod(ofst);
+	c.Sort();
+	c.Multimethod(ofst);
 	ofst << endl;
-	c.outTrees(ofst);
-	c.clear();
+	c.OutTrees(ofst);
+	c.Clear();
 	ofst << "Empty container. " << endl;
-	c.out(ofst);
+	c.Out(ofst);
+	ifst.close();
+	ofst.close();
 	cout << "Stop" << endl;
 	return 0;
 }

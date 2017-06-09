@@ -6,7 +6,7 @@
 #include <cctype>
 
 
-plant* plant::in(std::ifstream &ifst)
+plant* plant::In(std::ifstream &ifst)
 {
 	plant *p;
 	int k;
@@ -25,16 +25,16 @@ plant* plant::in(std::ifstream &ifst)
 		default:
 			return 0;
 	}
-	p->inData(ifst);
+	p->InData(ifst);
 	return p;
 }
 
-bool plant::compare(plant &b)
+bool plant::Compare(plant &b)
 {
-	return consonant_count() < b.consonant_count();
+	return ConsonantCount() < b.ConsonantCount();
 }
 
-int plant::consonant_count()
+int plant::ConsonantCount()
 {
 	int consonsnts = 0;
 	for (int i = 0, length = name.size(); i < length; i++)
@@ -50,7 +50,7 @@ int plant::consonant_count()
 	return consonsnts;
 }
 
-void plant::inData(std::ifstream &ifst)
+void plant::InData(std::ifstream &ifst)
 {
 	ifst >> name;
 	std::string habitat_in;
@@ -66,7 +66,7 @@ void plant::inData(std::ifstream &ifst)
 		habitat = plant::FOREST;
 }
 
-void plant::outData(std::ofstream &ofst)
+void plant::OutData(std::ofstream &ofst)
 {
 	std::string habitat_out = "";
 	switch (habitat)
@@ -88,10 +88,10 @@ void plant::outData(std::ofstream &ofst)
 			return;
 	}
 	ofst << "Name = " << plant::name << ", habitat = " << habitat_out <<
-			", consonant count = " << consonant_count() << std::endl;
+			", consonant count = " << ConsonantCount() << std::endl;
 }
 
-void plant::outTree(std::ofstream &ofst)
+void plant::OutTree(std::ofstream &ofst)
 {
 }
 

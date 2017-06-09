@@ -3,9 +3,9 @@
 
 
 
-void bush::inData(std::ifstream &ifst)
+void bush::InData(std::ifstream &ifst)
 {
-	plant::inData(ifst);
+	plant::InData(ifst);
 	std::string month;
 	ifst >> month;
 	if (month == "January")
@@ -34,7 +34,7 @@ void bush::inData(std::ifstream &ifst)
 		flowering = bush::DECEMBER;
 }
 
-void bush::outData(std::ofstream &ofst)
+void bush::OutData(std::ofstream &ofst)
 {
 	std::string month;
 	switch (flowering)
@@ -54,26 +54,25 @@ void bush::outData(std::ofstream &ofst)
 		default : break;
 	}
 	ofst << "This is a bush: flowering month = " << month << ". ";
-	plant::outData(ofst);
+	plant::OutData(ofst);
 }
 
-void bush::multimethod(plant *other, std::ofstream &ofst)
+void bush::Multimethod(plant *other, std::ofstream &ofst)
 {
-	other->mmBush(ofst);
+	other->MmBush(ofst);
 }
-//Тип первого аргумента определяется автоматически
-//вызывается один из обработчиков специализации второго аргумента
-void bush::mmTree(std::ofstream &ofst)
+
+void bush::MmTree(std::ofstream &ofst)
 {
 	ofst << "Tree and Bush" << std::endl;
 }
-//функции-диспетчеры, осуществляющие переход к анализу второго аргумента
-void bush::mmBush(std::ofstream &ofst)
+
+void bush::MmBush(std::ofstream &ofst)
 {
 	ofst << "Bush and Bush" << std::endl;
 }
 
-void bush::mmFlower(std::ofstream &ofst)
+void bush::MmFlower(std::ofstream &ofst)
 {
 	ofst << "Flower and Bush" << std::endl;
 }

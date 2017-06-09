@@ -2,9 +2,9 @@
 
 
 
-void flower::inData(std::ifstream &ifst)
+void flower::InData(std::ifstream &ifst)
 {
-	plant::inData(ifst);
+	plant::InData(ifst);
 	std::string growing_in;
 	ifst >> growing_in;
 	if (growing_in == "Home")
@@ -15,7 +15,7 @@ void flower::inData(std::ifstream &ifst)
 		growing = flower::WILD;
 }
 
-void flower::outData(std::ofstream &ofst)
+void flower::OutData(std::ofstream &ofst)
 {
 	std::string growing_out;
 	switch (growing)
@@ -26,26 +26,25 @@ void flower::outData(std::ofstream &ofst)
 		default : break;
 	}
 	ofst << "This is a flower: grows " << growing_out << ". ";
-	plant::outData(ofst);
+	plant::OutData(ofst);
 }
-//функции-диспетчеры, осуществляющие переход к анализу второго аргумента
-void flower::multimethod(plant *other, std::ofstream &ofst)
+
+void flower::Multimethod(plant *other, std::ofstream &ofst)
 {
-	other->mmFlower(ofst);
+	other->MmFlower(ofst);
 }
-//Тип первого аргумента определяется автоматически
-//вызывается один из обработчиков специализации второго аргумента
-void flower::mmTree(std::ofstream &ofst)
+
+void flower::MmTree(std::ofstream &ofst)
 {
 	ofst << "Tree and Flower" << std::endl;
 }
 
-void flower::mmBush(std::ofstream &ofst)
+void flower::MmBush(std::ofstream &ofst)
 {
 	ofst << "Bush and Flower" << std::endl;
 }
 
-void flower::mmFlower(std::ofstream &ofst)
+void flower::MmFlower(std::ofstream &ofst)
 {
 	ofst << "Flower and Flower" << std::endl;
 }

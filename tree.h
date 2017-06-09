@@ -10,13 +10,13 @@ class tree : public plant
 {
 	long int age;
 public:
-	virtual void inData(std::ifstream &ifst);
-	virtual void outData(std::ofstream &ofst);
-	virtual void outTree(std::ofstream &ofst);
-	virtual void multimethod(plant *other, std::ofstream &ofst);
-	virtual void mmTree(std::ofstream &ofst);
-	virtual void mmBush(std::ofstream &ofst);
-	virtual void mmFlower(std::ofstream &ofst);
+	virtual void InData(std::ifstream &ifst);
+	virtual void OutData(std::ofstream &ofst);
+	virtual void OutTree(std::ofstream &ofst);
+	virtual void Multimethod(plant *other, std::ofstream &ofst);
+	virtual void MmTree(std::ofstream &ofst);
+	virtual void MmBush(std::ofstream &ofst);
+	virtual void MmFlower(std::ofstream &ofst);
 };
 
 

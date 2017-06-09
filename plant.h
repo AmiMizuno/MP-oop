@@ -15,16 +15,16 @@ private:
 	std::string name;
 	zone habitat;
 public:
-	static plant *in(std::ifstream &ifst);
-	bool compare(plant &b);
-	int consonant_count();
-	virtual void inData(std::ifstream &ifst);
-	virtual void outData(std::ofstream &ofst);
-	virtual void outTree(std::ofstream &ofst);
-	virtual void multimethod(plant *other, std::ofstream &ofst) = 0;
-	virtual void mmTree(std::ofstream &ofst) = 0;
-	virtual void mmBush(std::ofstream &ofst) = 0;
-	virtual void mmFlower(std::ofstream &ofst) = 0;
+	static plant *In(std::ifstream &ifst);
+	bool Compare(plant &b);
+	int ConsonantCount();
+	virtual void InData(std::ifstream &ifst);
+	virtual void OutData(std::ofstream &ofst);
+	virtual void OutTree(std::ofstream &ofst);
+	virtual void Multimethod(plant *other, std::ofstream &ofst) = 0;
+	virtual void MmTree(std::ofstream &ofst) = 0;
+	virtual void MmBush(std::ofstream &ofst) = 0;
+	virtual void MmFlower(std::ofstream &ofst) = 0;
     virtual ~plant() {} // создание без инициализации
 
 };
